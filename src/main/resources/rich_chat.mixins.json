@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.ashley1227.richchat.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "SharedConstantsMixin",
+    "ServerPlayNetworkHandlerMixin",
+    "MessageCommandMixin",
+    "SayCommandMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

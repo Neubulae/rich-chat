@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "rich_chat",
+  "version": "${version}",
+
+  "name": "Rich Chat",
+  "description": "Rich chat features for Minecraft using Fabric and some basic markdown",
+  "authors": [
+    "Ashley1227"
+  ],
+  "contact": {
+    "homepage": "https://ashley1227.github.io/"
+  },
+
+  "license": "Unlicense",
+  "icon": "assets/rich_chat/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.ashley1227.richchat.RichChatMod"
+    ]
+  },
+  "mixins": [
+    "rich_chat.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "minecraft": "1.15.x"
+  }
+}
