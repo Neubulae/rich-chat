@@ -3,6 +3,8 @@ Adds support for some basic markdown in Minecraft.
 ## Server side
 Rich chat is currently a server side mod.
 
+Thanks @shedaniel and @i509VCB for helping me out!
+
 ---
 
 Some supported markdown syntax:
