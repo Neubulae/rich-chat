@@ -120,8 +120,8 @@ public class Formatter {
 		return (LiteralText) (
 				new LiteralText(MENTION_SYMBOL + string)
 						.setStyle(
-								new Style().setUnderline(true).setItalic(true).setColor(BLUE)
-										.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/w " + string + " "))
+								 Style.EMPTY.withUnderline(true).withItalic(true).withColor(BLUE)
+										.withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/w " + string + " "))
 						)
 		);
 	}
@@ -197,7 +197,7 @@ public class Formatter {
 			text.append(t);
 
 			Style style = t.getStyle();
-			style.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, format(String.valueOf(spoiler.getText())).get(0)));
+			style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, format(String.valueOf(spoiler.getText())).get(0)));
 			return;
 		}
 		if (node instanceof Link) {
@@ -229,10 +229,10 @@ public class Formatter {
 
 	public LiteralText genLink(String URL, String text) {
 		LiteralText linkText = new LiteralText(text);
-		Style style = new Style();
-		style.setClickEvent(new ClickEvent(
+		Style style = Style.EMPTY;
+		style.withClickEvent(new ClickEvent(
 				ClickEvent.Action.OPEN_URL, URL)
-		).setColor(BLUE).setItalic(true).setUnderline(true);
+		).withColor(BLUE).withItalic(true).withUnderline(true);
 		linkText.setStyle(style);
 		return linkText;
 	}

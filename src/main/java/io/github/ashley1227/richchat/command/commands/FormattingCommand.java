@@ -12,16 +12,16 @@ public class FormattingCommand {
 	private static Formatter formatter = new Formatter();
 
 	private static Text[] feedback = {
-			new LiteralText("Formatting").formatted(Formatting.UNDERLINE),
-			new LiteralText("§oTry /colors or /emojis to see a list of colors or emojis"),
+			new LiteralText("文本格式").formatted(Formatting.UNDERLINE),
+			new LiteralText("§o使用/colors或/emojis以查看可文本颜色与可用表情"),
 			new LiteralText(""),
-			new LiteralText("    **text**: §ltext"),
-			new LiteralText("    *text*: §otext"),
-			new LiteralText("    ***text***: §o§ltext"),
-			new LiteralText("    __text__: §ntext"),
-			new LiteralText("    ~~text~~: §mtext"),
-			new LiteralText("    ??text??: §ktext"),
-			new LiteralText("    ||text||: ").append(formatter.format("||text||").get(0)).append(" <- Hover")
+			new LiteralText("    **文字**: §l文字"),
+			new LiteralText("    *文字*: §o文字"),
+			new LiteralText("    ***文字***: §o§l文字"),
+			new LiteralText("    __文字__: §n文字"),
+			new LiteralText("    ~~文字~~: §m文字"),
+			new LiteralText("    ??文字??: §k文字"),
+			new LiteralText("    ||文字||: ").append(formatter.format("||文字||").get(0)).append(" <- 用鼠标悬浮上去看看")
 	};
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(CommandManager.literal("formatting")

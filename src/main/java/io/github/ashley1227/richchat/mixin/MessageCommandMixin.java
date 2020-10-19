@@ -8,6 +8,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Util;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -30,10 +31,13 @@ public abstract class MessageCommandMixin {
 		ArrayList<LiteralText> texts = formatter.format(message.asString());
 
 		for(ServerPlayerEntity p : targets) {
-			p.sendMessage((new TranslatableText("commands.message.display.incoming", formatter.formatPlayerName(source.getDisplayName().asString()), texts.get(0))));
+			p.sendSystemMessage(
+					    (new TranslatableText("commands.message.display.incoming", formatter.formatPlayerName(source.getDisplayName().asString()), texts.get(0))),
+					    source.getEntity() != null ? source.getEntity().getUuid() : Util.NIL_UUID
+			);
 			for (int i = 1; i < texts.size(); i++) {
-				p.sendMessage(
-						texts.get(i)
+				p.sendSystemMessage(
+						texts.get(i), source.getEntity() != null ? source.getEntity().getUuid() : Util.NIL_UUID
 				);
 			}
 			source.sendFeedback((new TranslatableText("commands.message.display.outgoing", formatter.formatPlayerName(source.getDisplayName().asString()), texts.get(0))), false);

@@ -19,8 +19,8 @@ public class EmojisCommand {
 		regenText();
 	}
 	protected static void regenText() {
-		feedback.add(new LiteralText("Colors").formatted(Formatting.UNDERLINE));
-		feedback.add(new LiteralText("§oTry /formatting or /emojis to see a list of formatting or emojis"));
+		feedback.add(new LiteralText("颜色").formatted(Formatting.UNDERLINE));
+		feedback.add(new LiteralText("§o使用/formatting或者/emojis以查看文本格式和可用表情！"));
 		feedback.add(new LiteralText(""));
 		for(Emoji e : RichChatRegistry.EMOJIS) {
 			LiteralText t = new LiteralText("    ");
